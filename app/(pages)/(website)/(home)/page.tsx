@@ -4,6 +4,8 @@ import * as React from 'react'
 export default function Home() {
   return (
     <main className="">
+
+      <h1>home</h1>
       here is our app home
       <Image
         src="/assets/images/logo.svg"

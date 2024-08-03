@@ -12,9 +12,6 @@ export default [
 
   //ignore some folders
   {
-    ignores: [
-      ".next/*",
-      
-    ],
+    ignores: [".next/*", "__tests__/*", "cypress/*"],
   },
 ];
