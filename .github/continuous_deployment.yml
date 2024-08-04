@@ -1,0 +1,38 @@
+name: Workflow for C.Deployment to vercel With github actions
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+env:
+  #variables needed for publish
+  VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} #get team ID from vercel and create a secret on github settings
+  VERCEL_PROJET_ID: ${{ secrets.VERCEL_PROJET_ID }} #get vercel project ID and save to github
+
+jobs:
+
+  #Deploy to a production or test 
+  Deploy:
+    name: Deploy after a release on cloud to test
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name:  Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Install Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: Pull vercel environment information
+        run: vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }} #create secret on github
+
+      - name: Build project artafact
+        run: vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+      - name: Deploy Project Artafact to Vercel
+        run: vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
+
+
+      
+        
