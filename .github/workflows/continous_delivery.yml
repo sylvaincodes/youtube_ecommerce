@@ -17,11 +17,12 @@ jobs:
     name: Push Docker Image to Container Registry
     runs-on: ubuntu-latest
     
-    #Required permissions to write and read and saved image on the registry
-    permissions: write
-    contents: read
-    attestaions:write
-    id-token: write
+      #Required permissions to write and read and saved image on the registry
+    permissions: 
+      packages: write
+      contents: read
+      attestations: write
+      id-token: write
 
     steps:
       - name:  Checkout Code
@@ -33,7 +34,7 @@ jobs:
           node-version: 20.x
 
       - name: Install Dependencies
-          run: npm install
+        run: npm install
 
       - name: Build the project
         run: npm run build
