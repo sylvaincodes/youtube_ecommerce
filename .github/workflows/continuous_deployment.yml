@@ -8,7 +8,7 @@ on:
 env:
   #variables needed for publish
   VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }} #get team ID from vercel and create a secret on github settings
-  VERCEL_PROJET_ID: ${{ secrets.VERCEL_PROJECT_ID }} #get vercel project ID and save to github
+  VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }} #get vercel project ID and save to github
 
 jobs:
 
