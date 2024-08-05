@@ -18,6 +18,13 @@ jobs:
         name: Deliver docker image to Container registry
         runs-on: ubuntu-latest
 
+        #Add rights to create image on registry
+        permissions:
+          packages: write
+          contents: read
+          attestations: write
+          id-token: write
+
         steps:
           - name: Checkout Code
             uses: actions/checkout@v4
