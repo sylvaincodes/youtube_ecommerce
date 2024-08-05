@@ -20,8 +20,9 @@
     "paths": {
       "@/*": ["./*"]
     },
-    // "baseUrl": "http://localhost:3000"
+    "baseUrl": "."
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "cypress/e2e/home.cy.js", "babel.config.ts", "__tests__/ui/home.test.tsx"],
-  "exclude": ["node_modules","__tests__"]
+  "include": ["next-env.d.ts", "**/*.ts", 
+  "**/*.tsx", ".next/types/**/*.ts"],
+  "exclude": ["node_modules","__tests__/*"],
 }

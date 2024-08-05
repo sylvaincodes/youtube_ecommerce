@@ -3,8 +3,6 @@
         "target": "es5",
         "lib": ["es5", "dom"],
         "types": ["cypress", "node"],
-        "baseUrl": "http://localhost:3000"
     },
-
     "include": ["**/*.ts"]
 }
