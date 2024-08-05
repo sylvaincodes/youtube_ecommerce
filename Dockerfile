@@ -3,15 +3,15 @@ FROM node:18
 #Name home sapce
 WORKDIR /dockerapp
 
-#copy package json to dockerapp
+#copy package json to folder
 COPY package.json ./
 RUN npm install
 
-#copy full content to dockerapp
+#copy full content to folder
 COPY . .
 
-#run on  port 3000
+#run on port 
 EXPOSE 3000
 
-#run command
+#run server
 CMD npm run dev

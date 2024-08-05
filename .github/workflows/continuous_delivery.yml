@@ -1,0 +1,61 @@
+name: Workflow for CD Delivery for testers with github actions
+
+on:
+    release:
+        types: [published]
+    workflow_dispatch: # trigger the worflow manually
+            
+env:
+
+    # These secrets key must be created on github repository 
+        #Go to your github repository - Go to Settings - Select Actions secrets - Create  
+
+    REGISTRY: ghcr.io #github container repository  
+    IMAGE_NAME: ${{ github.actor }}/youtube_ecommerce_docker_image:latest
+
+jobs:
+    Deploy:
+        name: Deliver docker image to Container registry
+        runs-on: ubuntu-latest
+
+        steps:
+          - name: Checkout Code
+            uses: actions/checkout@v4
+
+          - name: Install Node
+            uses: actions/setup-node@v4
+            with:
+               node-version: 20.x
+
+          - name: Install Dependencies
+            run: npm install
+
+          - name: Build project
+            run: npm run build
+
+          - name: Log in the container registry 
+            uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+            with:
+              registry: ${{ env.REGISTRY }}  
+              username: ${{ github.actor }} 
+              password: ${{ secrets.GITHUB_TOKEN }}
+              
+          - name: Extract metadata for docker
+            id: meta
+            uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+            with:
+              images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+          - name: Publish
+            run: |
+                   docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+                   docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+          
+
+        
+
+
+            
+          
+              
+            

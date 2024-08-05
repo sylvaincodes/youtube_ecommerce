@@ -1,8 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    forceSwcTransforms: true,
-  },
+
+    experimental:{
+        forceSwcTransforms: true
+    }
+
 };
 
 export default nextConfig;
