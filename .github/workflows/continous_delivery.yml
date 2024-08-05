@@ -40,13 +40,22 @@ jobs:
         run: npm run build
 
       - name: Log in the container registry
-        uses: docker/login-action@65b78e6e13532edd9afa3aa52ac7964289d1a9c1
+        uses: ./
         with:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }} #Set automatically
-          password: ${{ env.GITHUB_TOKEN }} #generate automatically 
+          password: ${{ secrets.GITHUB_TOKEN }} #generate automatically 
+
+
+      - name: Extract metadata for docker
+        id: meta
+        uses: docker/metadata-action@9ec57ed1fcdbf14dcef7dfbe97b2010124a938b7
+        with: 
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
       - name: Publish
         run: |
               docker build . --tag ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
               docker push ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      
