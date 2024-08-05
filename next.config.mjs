@@ -3,8 +3,6 @@ const nextConfig = {
   experimental: {
     forceSwcTransforms: true,
   },
-
-  distDir: "build",
 };
 
 export default nextConfig;
