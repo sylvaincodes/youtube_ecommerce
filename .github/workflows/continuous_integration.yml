@@ -41,7 +41,7 @@ jobs:
           with:
             name: build
             if-no-files-found: error
-            path: .next
+            path: build
 
 
   cypress-tests:
@@ -56,7 +56,7 @@ jobs:
            uses: actions/download-artifact@v4
            with:
               name: build
-              path: .next
+              path: build
 
 
          - name: Cypress run test 
