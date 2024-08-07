@@ -11,9 +11,9 @@ export default function Logo() {
         height="70"
         alt="logo"
       />
-      <span className="hidden font-extrabold lg:flex text-[40px]  tracking-tigh mt-1 text-primary-900 antialiased">
+      <h2 data-testid="carrefour" className="hidden font-extrabold lg:flex text-[40px]  tracking-tigh mt-1 text-primary-900 antialiased">
         Carrefour
-      </span>
+      </h2>
     </Link>
   );
 }
