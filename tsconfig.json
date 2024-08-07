@@ -23,6 +23,6 @@
     "baseUrl": "."
   },
   "include": ["next-env.d.ts", "**/*.ts", 
-  "**/*.tsx", ".next/types/**/*.ts", "auth.js"],
+  "**/*.tsx", ".next/types/**/*.ts", "auth.js", "app/api/auth/[...nextauth]/route.js"],
   "exclude": ["node_modules","__tests__/*","app/api/auth/[...nextauth]"],
 }
