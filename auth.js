@@ -38,7 +38,7 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   ],
 
   callbacks: {
-    async session({ session, token, user }) {
+    async session({ session, user }) {
       const promise = await axios.get(
         process.env.NEXT_PUBLIC_API_URL + "/api/user",
         {
