@@ -1,3 +1,51 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+  
+
+/* RESET CSS */
+html{
+    font-size: 16px;
+}
+body{
+    @apply text-base leading-6 bg-white text-slate-700 dark:text-slate-100
+}
+
+
+/* grid banner css */
+@layer components{
+    .grid-hero{
+        display: grid;
+        grid-template-rows:  auto;
+        grid-template-columns: 1fr;
+        margin-top: 32px;
+        /* gap: 32px; */
+        grid-template-areas:  "swiper";
+
+        @media (min-width: 992px) {
+        grid-template-columns: auto 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "categories swiper swiper";
+        }
+        
+        @media (min-width: 1280px) {
+        grid-template-columns: auto 1fr 1fr 1fr;
+        grid-template-rows: auto;
+        grid-template-areas: "categories swiper swiper swiper";
+        }
+    }
+
+    .grid-area-categories{
+    grid-area: categories;
+    height: auto;
+    border-radius: 4px;
+    box-shadow:rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+    }
+    .grid-area-swiper{
+        grid-area: swiper;
+        height: auto;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;        
+    }
+
+}

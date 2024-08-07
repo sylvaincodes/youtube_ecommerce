@@ -12,6 +12,12 @@ export default [
 
   //ignore some folders
   {
-    ignores: [".next/*", "__tests__/*", "cypress/*", "node_modules/*"],
+    ignores: [
+      ".next/*",
+      "__tests__/*",
+      "cypress/*",
+      "node_modules/*",
+      "components/ui/*",
+    ],
   },
 ];
