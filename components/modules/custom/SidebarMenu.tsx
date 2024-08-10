@@ -92,7 +92,7 @@ export default function SidebarMenu() {
                         className="group inline-flex items-center px-4 py-2 gap-4 w-full hover:text-primary-700 capitalize cursor-pointer"
                         key={idx}
                         onClick={() =>
-                          router.push(`.categories/${item.link}/products`)
+                          router.push(`/categories/${item.link}/products`)
                         }
                       >
                         <div className="flex items-center gap-4 w-full">

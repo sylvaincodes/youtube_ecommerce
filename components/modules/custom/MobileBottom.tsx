@@ -8,7 +8,7 @@ import { useSelector } from "react-redux";
 export default function MobileBottom() {
   const { cart } = useSelector((state: IRootState) => ({ ...state }));
   return (
-    <div className="bg-white z-40 w-full flex border-t border-t-gray-300 h-20 px-10 fixed shadow-md bottom-0 left-0 lg:hidden">
+    <div className="bg-white z-[1000] w-full flex border-t border-t-gray-300 h-20 px-10 fixed shadow-md bottom-0 left-0 lg:hidden">
       <div className="flex items-cente justify-center gap-8 w-full">
         <Link
           href="/products"

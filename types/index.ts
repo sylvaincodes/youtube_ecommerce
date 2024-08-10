@@ -50,12 +50,12 @@ export type Question = {
 };
 
 export type Review = {
-  _id: string;
-  reviewBy: User;
+  _id?: string;
+  reviewBy?: User;
   rating: number;
   review: string;
   likes: string[];
-  createdAt?: Date;
+  createdAt: Date;
   updatedAt?: Date;
 };
 
@@ -63,9 +63,11 @@ export type User = {
   _id: string;
   name: string;
   email: string;
+  image: string;
   password: string;
   role: string;
   createdAt?: Date;
+  address: Address[];
   // TODO:Complete user
 };
 
@@ -151,6 +153,7 @@ export type Order = {
   totalBeforeDiscount: number;
   couponApplied: Coupon;
   shippingStatus: string;
+  shippingAddress: Address;
   paymentResult: string;
   shippingTimes: string;
   shipping: Address;
@@ -176,7 +179,8 @@ export type Coupon = {
 };
 export type Address = {
   _id: string;
-  firsname: string;
+  firstName: string;
+  lastName: string;
   city: string;
   country: string;
   zipCode: string;
@@ -196,4 +200,33 @@ export type Slide = {
   image: string;
   textColor: string;
   createdAt?: Date;
+};
+
+export type Cart = {
+  cartItems: CartItem[];
+  cartTotal: number;
+  products: Product[];
+};
+
+export type Delivery = {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  times: string;
+  price: number;
+};
+
+export type Payment = {
+  id: string;
+  title: string;
+  subtitle: string;
+  image: string;
+  slug: string;
+};
+
+export type sendEmailTypes = {
+  subject: string;
+  email: string;
+  message: string;
 };

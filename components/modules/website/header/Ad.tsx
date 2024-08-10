@@ -1,5 +1,5 @@
-"use client"
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Container from "../../custom/Container";
 import Row from "../../custom/Row";
 import Link from "next/link";
@@ -10,8 +10,11 @@ import { useSession } from "next-auth/react";
 
 export default function Ad() {
   const { status } = useSession();
+
+  const [openUserMenu, setOpenUserMenu] = useState(false);
+
   return (
-    <section className="hidden lg:flex w-full border-b border-neutral-200">
+    <section className="hidden relative lg:flex w-full border-b border-neutral-200">
       <Container>
         <Row className="justify-between">
           <div className="flex">Welcome to Carrefour Store</div>
@@ -35,8 +38,10 @@ export default function Ad() {
               {status === "authenticated" ? (
                 <div className="flex gap-2 hover:cursor-pointer">
                   <User className="h-4 w-4 text-primary-500" />
-                  <span>Account</span>
-                  <UserMenu />
+                  <span onClick={() => setOpenUserMenu(!openUserMenu)}>
+                    Account
+                  </span>
+                  <UserMenu openUserMenu={openUserMenu} />
                 </div>
               ) : (
                 <Link

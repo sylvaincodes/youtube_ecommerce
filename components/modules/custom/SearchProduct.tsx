@@ -5,20 +5,21 @@ import Link from "next/link";
 import React from "react";
 import CurrencyFormat from "./CurrencyFormat";
 
-export default function SearchProduct({products, className}: { products: Product[]; className?: string }) {
+export default function SearchProduct({
+  products,
+  className,
+}: {
+  products: Product[];
+  className?: string;
+}) {
   return (
-    <div
-      className={cn(
-        "",
-        "md:grid-cols-3", className
-      )}
-    >
+    <div className={cn("", "md:grid-cols-3", className)}>
       {products.length > 0
         ? products.map((item: Product, idx: number) => {
             return (
               <div key={idx} className="flex flex-col gap-4 hover:shadow-xl">
                 <Link
-                  href="/"
+                  href={`/products/${item.slug}`}
                   className="h-40  flex items-center gap-4 w-full justify-center"
                 >
                   <Image
@@ -30,7 +31,7 @@ export default function SearchProduct({products, className}: { products: Product
                 </Link>
 
                 <Link
-                  href=""
+                  href={`/products/${item.slug}`}
                   className="flex flex-col gap-4 justify-center items-center"
                 >
                   <h1 className="font-medium text-center capitalize">

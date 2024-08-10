@@ -62,14 +62,16 @@ export default function QuantityCart({ item }: { item: CartItem }) {
   }, [item]);
 
   return (
-    <div className="inline-flex gap-4">
-      <div className="group bg-neutral-100 rounded-md p-1 grid place-content-center ">
+    <div className="inline-flex gap-4 items-center">
+      <div className="w-10 group bg-neutral-100 rounded-md p-1 grid place-content-center ">
         <Button variant="outline" size="icon" onClick={() => updateQty("dec")}>
           <MinusIcon />
         </Button>
       </div>
-
-      <div className="group bg-neutral-100 rounded-md p-1 grid place-content-center ">
+      <span className="text-xl font-bold text-black text-center w-8">
+        {qty}
+      </span>
+      <div className="w-10 group bg-neutral-100 rounded-md p-1 grid place-content-center ">
         <Button variant="outline" size="icon" onClick={() => updateQty("inc")}>
           <PlusIcon />
         </Button>

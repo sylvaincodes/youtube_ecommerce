@@ -1,4 +1,4 @@
-import { Option, SubProduct } from "./../types/index";
+import { Option, Review, SubProduct } from "./../types/index";
 import { Product } from "@/types";
 import { type ClassValue, clsx } from "clsx";
 import { twMerge } from "tailwind-merge";
@@ -6,7 +6,6 @@ import { twMerge } from "tailwind-merge";
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
-
 
 /** Get the discount from an option of a  product */
 export const discountPrice = (price: number, discount: number): number => {
@@ -34,16 +33,16 @@ export const getBestPriceWithDiscountFromProduct = (
     });
   });
 
-  const finalSort = sort.map((item: Array<number>)=> {
-    return item[0];
-  })
-  .sort(( a: number, b: number )=>{
-    return a - b;
-  })[0]
+  const finalSort = sort
+    .map((item: Array<number>) => {
+      return item[0];
+    })
+    .sort((a: number, b: number) => {
+      return a - b;
+    })[0];
 
   return finalSort;
 };
-
 
 /** Get the best low price from a list of number of option for a product without considering its discount */
 export const getBestPriceWithoutDiscountFromProduct = (
@@ -51,7 +50,7 @@ export const getBestPriceWithoutDiscountFromProduct = (
 ): number => {
   const data = product.subProducts.map((subProduct: SubProduct) => {
     return subProduct.options.map((options: Option) => {
-      return  options.price;
+      return options.price;
     });
   });
 
@@ -61,18 +60,38 @@ export const getBestPriceWithoutDiscountFromProduct = (
     });
   });
 
-  const finalSort = sort.map((item: Array<number>)=> {
-    return item[0];
-  })
-  .sort(( a: number, b: number )=>{
-    return a - b;
-  })[0]
+  const finalSort = sort
+    .map((item: Array<number>) => {
+      return item[0];
+    })
+    .sort((a: number, b: number) => {
+      return a - b;
+    })[0];
 
   return finalSort;
 };
 
-
-export const getDiscountRate = (price: number, discountPrice: number): number =>{
-  const d = (price - discountPrice)* (100/price)
+export const getDiscountRate = (
+  price: number,
+  discountPrice: number
+): number => {
+  const d = (price - discountPrice) * (100 / price);
   return parseFloat(d.toFixed(2));
-}
+};
+
+export const getRating = (product: Product) => {
+  const ratingTotal = product.reviews.reduce(
+    (acc: number, value: Review) => acc + value?.rating,
+    0
+  );
+
+  const rating = ratingTotal / product.reviews.length;
+
+  return rating;
+};
+
+export const getDate = (date: Date) => {
+  const newDate = new Date(date).toDateString();
+
+  return newDate;
+};

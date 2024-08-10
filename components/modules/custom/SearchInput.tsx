@@ -69,8 +69,8 @@ export default function SearchInput() {
       <div className="border border-white bg-neutral-200 flex-1 hidden lg:flex group-hover:bg-neutral-50 group-hover:shadow-xl">
         <Input
           className="appearance-none bg-transparent flex-1 
-          h-14"
-          placeholder="iphone 15 , ps5...."
+          h-14 text-2xl"
+          placeholder="apple, iphone 15, ps5...."
           ref={inputSearch}
           onInput={handleSearch}
           onMouseEnter={handleFocusOn}
@@ -82,7 +82,7 @@ export default function SearchInput() {
         initial={animation.hide}
         whileInView={animation.show}
         transition={{ delay: 0.3 }}
-        className="hidden absolute group-hover:flex top-[50px] z-20 rounded-t-xl w-full b-white border-neutral-100 border shadow-xl "
+        className="hidden absolute group-hover:flex top-[50px] z-20 rounded-t-xl w-full bg-white border-neutral-100 border shadow-xl "
       >
         {loading ? <Loading isLoading={loading} /> : ""}
         <SearchProduct
