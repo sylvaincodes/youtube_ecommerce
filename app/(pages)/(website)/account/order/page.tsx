@@ -6,7 +6,7 @@ import React from "react";
 
 export default async function page() {
   const session = await auth();
-  const orders = await getOrdersByUserId(session?.user?.id!);
+  const orders = await getOrdersByUserId(session?.user?.id);
   return (
     <div className="p-4 h-screen">
       <div className="p-4 border-2 border-gray border-dashed rounded-lg">

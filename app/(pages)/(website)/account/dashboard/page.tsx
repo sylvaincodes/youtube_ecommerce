@@ -8,7 +8,7 @@ import { MdLocalShipping, MdMoney } from "react-icons/md";
 
 export default async function page() {
   const session = await auth();
-  const orders = await getOrdersByUserId(session?.user?.id!);
+  const orders = await getOrdersByUserId(session?.user?.id);
   const received = orders.filter(
     (item: Order) => item.shippingStatus === "completed"
   );

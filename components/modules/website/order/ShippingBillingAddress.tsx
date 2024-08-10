@@ -57,7 +57,7 @@ export default function ShippingBillingAddress({
     };
 
     setLoading(true);
-   await axios
+    await axios
       .put(process.env.NEXT_PUBLIC_API_URL + "/api/order", data)
       .then((response) => {
         const data = response.data;
@@ -86,7 +86,11 @@ export default function ShippingBillingAddress({
 
       <div className="flex items-center gap-4">
         <Image
-          src={order?.user.image!}
+          src={
+            order?.user.image
+              ? order?.user.image
+              : "https://cdn-icons-png.flaticon.com/128/2202/2202112.png"
+          }
           width={60}
           height={60}
           alt="user image"

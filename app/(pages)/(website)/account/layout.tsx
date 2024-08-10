@@ -11,7 +11,7 @@ export default async function layout({
   children: React.ReactNode;
 }) {
   const session = await auth();
-  const user = await getUserById(session?.user?.id!);
+  const user = await getUserById(session?.user?.id);
   if (!session) {
     redirect("/");
   }
