@@ -18,7 +18,6 @@ export default function TopBar({
   setMinPrice,
   setMaxPrice,
   loading,
-  setLoading,
   slug,
   perpage,
   filter,
@@ -30,7 +29,6 @@ export default function TopBar({
   setMinPrice: (value: number) => void;
   setMaxPrice: (value: number) => void;
   loading: boolean;
-  setLoading: (value: boolean) => void;
   slug?: string;
   perpage: number;
   filter: string;
