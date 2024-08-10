@@ -6,7 +6,7 @@ on:
             - master
 
 env:
-    baseUrl: https://youtube-ecommerce.vercel.app
+    baseUrl: http://localhost:3000
 
 
 jobs:

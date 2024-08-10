@@ -64,7 +64,7 @@ export default function Register() {
         response.json().then((data) => {
           console.log(data);
           toast.custom(<Toast message={data.message} status="success" />);
-          router.push("/login");
+          router.push("/signin");
           return data;
         });
       }
