@@ -69,7 +69,6 @@ export default function ShopProducts({
         setMinPrice={setMinPrice}
         setMaxPrice={setMaxPrice}
         loading={loading}
-        setLoading={setLoading}
         slug={slug}
         perpage={perpage}
         filter={filter}
