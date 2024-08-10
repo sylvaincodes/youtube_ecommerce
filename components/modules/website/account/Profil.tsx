@@ -1,3 +1,4 @@
+/* eslint-disable  no-useless-escape */
 "use client";
 import { User } from "@/types";
 import { useRouter } from "next/navigation";

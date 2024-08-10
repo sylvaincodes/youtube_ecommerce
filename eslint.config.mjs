@@ -7,6 +7,9 @@ export default [
   { files: ["**/*.{js,mjs,cjs,ts,jsx,tsx}"] },
   {
     languageOptions: { globals: globals.node },
+    rules: {
+      "@typescript-eslint/no-non-null-assertion": "off",
+    },
     settings: {
       react: {
         version: "detect",

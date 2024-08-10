@@ -1,3 +1,4 @@
+/* eslint-disable  no-useless-escape */
 "use client";
 import React, { useState } from "react";
 import Container from "../../custom/Container";
