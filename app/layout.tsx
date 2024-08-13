@@ -4,6 +4,9 @@ import * as React from "react";
 import Providers from "@/providers";
 import { Metadata } from "next";
 
+export const dynamic = "force-dynamic";
+export const fetchCache = "force-no-store";
+
 // SEO GLOBAL
 export const metadata: Metadata = {
   metadataBase: new URL(`${process.env.NEXT_PUBLIC_SERVER_URL}`),
