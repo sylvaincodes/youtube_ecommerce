@@ -1,7 +1,5 @@
-import { auth } from "@/auth";
 import Cart from "@/components/modules/website/cart";
 import { Metadata } from "next";
-import { redirect } from "next/navigation";
 import React from "react";
 
 export default async function page() {
