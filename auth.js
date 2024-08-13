@@ -4,7 +4,6 @@ import Credentials from "next-auth/providers/credentials";
 import bcrypt from "bcrypt";
 
 export const { auth, handlers, signIn, signOut } = NextAuth({
-  trustHost: true,
   providers: [
     Credentials({
       name: "credentials",
@@ -71,4 +70,5 @@ export const { auth, handlers, signIn, signOut } = NextAuth({
   session: {
     strategy: "jwt",
   },
+  trustHost: true,
 });
