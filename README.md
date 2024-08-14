@@ -48,10 +48,23 @@ Use the ` git clone ` CLI to clone template directly  to your machine
 ## Project Dev Steps
 
 1. Environment Setup
-    - Install Next js Project
-    - Deploy on vercel first version
+   
+   Create a env file on the root of project
+   PUT THIS INSIDE
+
 ```bash
-    npx create-next-app@latest
+
+    NEXT_PUBLIC_SERVER_URL=http://localhost:3000
+    NEXT_PUBLIC_API_URL=https://carrefour-theta.vercel.app
+    NEXTAUTH_SECRET=NEXTAUTH_SECRET
+
+    # Stripe integration 
+    NEXT_PUBLIC_STRIPE_CLIENT_KEY=
+    STRIPE_SECRET_KEY=
+
+    # Paypal integration 
+    NEXT_PUBLIC_PAYPAL_CLIENT_ID=
+    PAYPAL_CLIENT_SECRET=
 ```
 
 2.  Project Folder Structure
