@@ -107,4 +107,4 @@ Use the ` git clone ` CLI to clone template directly  to your machine
 
 ## Questions
 
-If you have any issues or questions [Send a comment] (https://www.youtube.com/@sylvaincodes593) on Youtube or reach out me on [Discord](https://discord.com/channels/1234070993996091503/1234070994512248853)
+If you have any issues or questions [Send a comment] (https://www.youtube.com/@sylvaincodes593) on Youtube or reach out me on [Discord](https://discord.gg/aGer8EX9)
