@@ -4,12 +4,9 @@ import { cn } from "@/lib/utils";
 import { User as TUser } from "@/types";
 import {
   AlignJustify,
-  BadgeDollarSign,
-  BookUser,
-  LayoutDashboard,
   LogOut,
-  User,
 } from "lucide-react";
+import { MdSettings } from "react-icons/md";
 import { signOut } from "next-auth/react";
 import Image from "next/image";
 import Link from "next/link";
@@ -58,7 +55,7 @@ export default function SidebarAccount({ user }: { user: TUser }) {
                 className="flex items-center p-2 text-gray-900 rounded-lg"
                 href="/account/dashboard"
               >
-                <LayoutDashboard />
+                <MdSettings />
                 <span className="ms-3">Dashboard</span>
               </Link>
             </li>
@@ -68,7 +65,7 @@ export default function SidebarAccount({ user }: { user: TUser }) {
                 className="flex items-center p-2 text-gray-900 rounded-lg"
                 href="/account/profil"
               >
-                <User />
+                <MdSettings />
                 <span className="ms-3">Profil</span>
               </Link>
             </li>
@@ -78,7 +75,7 @@ export default function SidebarAccount({ user }: { user: TUser }) {
                 className="flex items-center p-2 text-gray-900 rounded-lg"
                 href="/account/order"
               >
-                <BadgeDollarSign />
+                <MdSettings />
                 <span className="ms-3">Order</span>
               </Link>
             </li>
@@ -88,7 +85,7 @@ export default function SidebarAccount({ user }: { user: TUser }) {
                 className="flex items-center p-2 text-gray-900 rounded-lg"
                 href="/account/address"
               >
-                <BookUser />
+                <MdSettings />
                 <span className="ms-3">Address</span>
               </Link>
             </li>
